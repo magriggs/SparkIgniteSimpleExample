@@ -29,7 +29,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 object SparkWordCount {
   def main(args: Array[String]) {
     // create the spark context
-    val sc = new SparkContext(new SparkConf().setAppName("Spark Count"))
+    val sc = new SparkContext(new SparkConf().setMaster("local").setAppName("Spark Count"))
 
     // create ignite rdd
     val resultsIgniteRDD = new IgniteContext[Char, Int](sc, () => new IgniteConfiguration()).fromCache("resultsIgniteRDD")

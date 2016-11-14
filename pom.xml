@@ -28,6 +28,13 @@
             <name>Scala-tools Maven2 Repository</name>
             <url>http://scala-tools.org/repo-releases</url>
         </pluginRepository>
+	<pluginRepository>
+		<id>central</id>
+		<url>https://repo1.maven.org/maven2</url>
+		<releases>
+			<enabled>true</enabled>
+		</releases>
+	</pluginRepository>
     </pluginRepositories>
 
     <properties>
@@ -53,8 +60,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -65,6 +72,14 @@
             <id>GridGain External Repository</id>
             <url>http://www.gridgainsystems.com/nexus/content/repositories/external</url>
         </repository>
+	<repository>
+		<id>central</id>
+		<url>https://repo1.maven.org/maven2</url>
+		<releases>
+			<enabled>true</enabled>
+		</releases>
+	</repository>
+
     </repositories>
 
     <dependencies>
@@ -76,32 +91,32 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>2.10.6</version>
+            <version>2.11.6</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.10</artifactId>
-            <version>1.6.1</version>
+            <version>1.6.3</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-hive_2.10</artifactId>
-            <version>1.6.1</version>
+            <version>1.6.3</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.10</artifactId>
-            <version>1.6.1</version>
+            <version>1.6.3</version>
         </dependency>
         <dependency>
             <groupId>org.apache.ignite</groupId>
             <artifactId>ignite-core</artifactId>
-            <version>1.5.11</version>
+            <version>1.5.0.final</version>
         </dependency>
         <dependency>
             <groupId>org.apache.ignite</groupId>
             <artifactId>ignite-spark_2.10</artifactId>
-            <version>1.5.11</version>
+            <version>1.5.0.final</version>
         </dependency>
     </dependencies>
 </project>
