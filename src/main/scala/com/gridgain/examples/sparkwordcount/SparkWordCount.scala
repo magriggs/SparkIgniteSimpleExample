@@ -43,7 +43,7 @@ object SparkWordCount {
     
     // count the occurrence of each word
     igniteWordsRDD.savePairs(tokenized.map((_, 1)).reduceByKey(_ + _))
-    
+
     // filter out words with less than threshold occurrences
     val filtered = igniteWordsRDD.filter(_._2 >= threshold)
     
