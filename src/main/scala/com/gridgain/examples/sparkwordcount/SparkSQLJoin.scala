@@ -57,8 +57,6 @@ object SparkSQLJoin {
     // create company dataframe
     val dfCompany = sqlContext.createDataFrame(companyCacheIgnite.map(p => Company(p._1, p._2)))
 
-//    val dfCompany = companyCacheIgnite.map(p => Company(p._1, p._2)
-
     // Register DataFrame as a table.
     dfCompany.registerTempTable("company")
 

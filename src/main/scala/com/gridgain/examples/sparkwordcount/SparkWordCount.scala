@@ -29,7 +29,12 @@ import org.apache.spark.{SparkConf, SparkContext}
 object SparkWordCount {
   def main(args: Array[String]) {
     // create the spark context
-    val sc = new SparkContext(new SparkConf().setAppName("Spark Count"))
+    val conf: SparkConf = new SparkConf()
+      .setMaster("spark://ubuntu.corp.griggs.org.uk:7077")
+      .setAppName("Spark Count")
+      .set("spark.execturo.memory", "1g");
+
+    val sc = new SparkContext(conf)
 
     // create ignite rdd
     val resultsIgniteRDD = new IgniteContext[Char, Int](sc, () => new IgniteConfiguration()).fromCache("resultsIgniteRDD")
@@ -43,7 +48,7 @@ object SparkWordCount {
     
     // count the occurrence of each word
     igniteWordsRDD.savePairs(tokenized.map((_, 1)).reduceByKey(_ + _))
-    
+
     // filter out words with less than threshold occurrences
     val filtered = igniteWordsRDD.filter(_._2 >= threshold)
     

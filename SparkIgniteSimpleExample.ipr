@@ -25,8 +25,16 @@
         <processorPath useClasspath="true" />
         <module name="sparkwordcount" />
       </profile>
+      <profile default="false" name="Annotation profile for SparkIgniteSimpleExample" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="SparkIgniteSimpleExample" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="SparkIgniteSimpleExample" target="1.8" />
       <module name="sparkwordcount" target="1.6" />
     </bytecodeTargetLevel>
   </component>
@@ -65,7 +73,7 @@
     </option>
   </component>
   <component name="ScalaCompilerConfiguration">
-    <profile name="Maven 1" modules="sparkwordcount" />
+    <profile name="Maven 1" modules="sparkwordcount,SparkIgniteSimpleExample" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
