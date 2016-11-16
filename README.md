@@ -12,21 +12,26 @@ ___
 3. Grab a data file
     - For example, download biographies.list.gz from ftp://ftp.fu-berlin.de/pub/misc/movies/database/ and extract
 4. Start Ignite
-    - `ignite.sh`
+    - `YOUR_IGNITE_LOCATION/bin/ignite.sh`
 5. Start Spark cluster
-    - `start-all.sh`
+    - `YOUR_SPARK_LOCATION/sbin/start-all.sh`
 6. Build the application:
     - `sbt package`
 7. Run Spark+Ignite 
     - `start.sh`
 
 ___
-<h2>Examples</h2>
+
+<h2>Scripted Runnable Examples</h2>
 <h3>SparkWordCount</h3>
 The first example counts the occurrence of each word in a corpus and then counts the
 occurrence of each character in the most popular words.
 
+To run Spark+Ignite:
 ./start.sh com.gridgain.examples.sparkwordcount.SparkWordCount <inputfile>
+
+To run Spark-RDD only for comparison:
+./start-rdd.sh com.gridgain.examples.sparkwordcount.SparkWordCount <inputfile>
 
 <br/>
 
@@ -34,7 +39,11 @@ occurrence of each character in the most popular words.
 This example demonstrates joining 2 RDDs via the use of DataFrames.
 The first RDD is create from a file and the second is an IgniteRDD.
 
+To run Spark+Ignite:
 ./start.sh com.gridgain.examples.sparkwordcount.SparkSQLJoin <inputfile>
+
+To run Spark-RDD only for comparison:
+./start-rdd.sh com.gridgain.examples.sparkwordcount.SparkSQLJoin <inputfile>
 
 ___
 
